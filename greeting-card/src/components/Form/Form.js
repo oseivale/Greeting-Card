@@ -1,86 +1,87 @@
+import { FormLabel, FormInput, FormHeader, DownLoad, Submit } from './styles';
 
 const Form = ({ handleSubmit, cardDetails, handleInputChange, handleUpload }) => {
     return (
         <form onSubmit={handleSubmit}>
-            <label>Sender name:
-                <input 
+            <FormLabel>Sender name:
+                <FormInput 
                 name="senderName"
                 type="text" 
                 value={cardDetails.senderName}
                 onChange={handleInputChange}
                  />
-            </label>
-            <label>Recipient name:
-                <input 
+            </FormLabel>
+            <FormLabel>Recipient name:
+                <FormInput 
                     name="recipientName"
                     type="text"
                     value={cardDetails.recipientName}
                     onChange={handleInputChange} 
                 />
-            </label>
+            </FormLabel>
             <div>
-               <div><h4>What's the occasion?</h4>
+               <div><FormHeader>What's the occasion?</FormHeader>
                    <div>
-                        <label>
-                            <input 
+                        <FormLabel>
+                            <FormInput 
                             type="radio" name="holiday"
                             value="birthday"
                             onChange={handleInputChange} />
                             Birthday   
-                        </label>
+                        </FormLabel>
                    </div>
                 
                 <div>
-                    <label>
-                       <input 
+                    <FormLabel>
+                       <FormInput 
                        type="radio" name="holiday"
                        value="christmas"
                        onChange={handleInputChange} />  
                        Christmas
-                    </label>
+                    </FormLabel>
                 </div>
                 <div>
-                    <label>
-                       <input 
+                    <FormLabel>
+                       <FormInput 
                        type="radio" value="mothers-day" name="holiday"
                        onChange={handleInputChange} />
                        Mother's Day   
-                    </label>
+                    </FormLabel>
                 </div>
                 <div>
-                   <label>
-                        <input 
+                   <FormLabel>
+                        <FormInput 
                         type="radio" value="fathers-day" name="holiday"
                         onChange={handleInputChange} /> 
                         Father's Day    
-                    </label>
+                    </FormLabel>
                 </div>
                 <div>
-                    <label>
-                        <input type="radio" value="thank-you" name="holiday"
+                    <FormLabel>
+                        <FormInput type="radio" value="thank-you" name="holiday"
                         onChange={handleInputChange} />   
                         Thank You 
-                    </label>
+                    </FormLabel>
                 </div>
             </div> 
             </div>
             
-            <div><h4>Choose a message:</h4>
+            <div><FormHeader>Choose a message:</FormHeader>
                 <div>
-                  <label>
-                   <input type="radio" value="pre-selected" name="messageType"
+                  <FormLabel>
+                   <FormInput type="radio" value="pre-selected" name="messageType"
                    checked={cardDetails.messageType === 'pre-selected'}
                    onChange={handleInputChange} /> 
                    Pre-selected Template
-                </label>  
+                </FormLabel>  
                 </div>
                 <div>
-                  <label>
-                    <input type="radio" value="custom" name="messageType"
+                  <FormLabel>
+                    <FormInput type="radio" value="custom" name="messageType"
                     checked={cardDetails.messageType === 'custom'}
                     onChange={handleInputChange} />  
                     Custom Greeting
-                    </label>  
+                    </FormLabel>  
                 </div>
                 { cardDetails.messageType === 'custom' && (
                     <textarea 
@@ -91,12 +92,13 @@ const Form = ({ handleSubmit, cardDetails, handleInputChange, handleUpload }) =>
                     )}
             </div>
             <div>
-                <input 
-                type="file" 
-                name="imageUpload" 
-                onChange={handleUpload} />
+                <DownLoad 
+                    type="file" 
+                    name="imageUpload" 
+                    onChange={handleUpload} 
+                />
             </div>
-            <input type="submit" />
+            <Submit type="submit" />
         </form>
     )
 }

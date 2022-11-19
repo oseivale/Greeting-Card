@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import christmasImg from '../../images/davies-designs-studio-PvGt65_l0FU-unsplash.jpg'
 
 export const GreetingCard = styled.div`
     background-image: url(${props => props.bgImg}); 
@@ -15,17 +14,32 @@ export const MessageContainer = styled.div`
     width: 50%;
     margin: ${props => props.marginSetting ? props.marginSetting : '3rem auto'};
     padding: 3rem;
-    border: 10px double ${props => props.color};
+    border: 3px dashed ${props => props.color};
 `
 
-export const MainHeader = styled.h5`
+export const MessageContent = styled.p`
+    width: 90%;
+    overflow-wrap: break-word;
+    margin: 1rem auto;
+`
 
+export const MainHeader = styled.h6`
+    font-family: ${props => props.headerFont};
+    font-size: ${props => props.fontSize ? props.fontSize : "2rem"};
 `
 
 export const SubHeader = styled.h1`
-
+    font-family: ${props => props.subHeader};
+    font-size: ${props => props.fontSize};
 `
 
 export const Greeting = styled.h5`
+    font-family: 'Abel', sans-serif;
+`
+
+export const Recipient = styled.p`
+    margin-top: 2rem;
+    font-size: 2rem;
+    font-family: 'Corinthia', cursive;
 
 `

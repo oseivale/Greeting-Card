@@ -9,7 +9,7 @@ const FormModal = ({ show, handleClose, children }) => {
             centered
         >
             <Modal.Header closeButton>
-                <Modal.Title>Modal title</Modal.Title>
+                <Modal.Title style={{ fontFamily: `'Fuzzy Bubbles', cursive`}}>Greeting Card Information</Modal.Title>
             </Modal.Header>
 
             <Modal.Body>

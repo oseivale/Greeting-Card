@@ -61,7 +61,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>This is greeting card</h1>
+      <h1 style={{margin: '2rem 0', fontFamily: `'Abel', sans-serif`}}>Click to create your own greeting card</h1>
       <Button variant="primary" onClick={handleShow}>
         Create your custom greeting card!
       </Button>
